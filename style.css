@@ -146,15 +146,18 @@ section {
   margin-bottom: 2.5em;
 }
 
-/* --- Theme Switcher --- */
 .color-scheme {
+  /* Step 4.3: Move to top right corner */
   position: absolute;
   top: 1rem;
   right: 1rem;
+  
+  /* Styling to make it look clean */
   font-size: 80%;
   font-family: inherit;
 }
 
 #theme-switcher {
+  /* Ensure the dropdown matches your site font */
   font: inherit;
 }
