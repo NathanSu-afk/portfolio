@@ -20,7 +20,7 @@ document.body.prepend(nav);
 // STEP 3.1: Base Path Logic (Fixes links on GitHub Pages)
 const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1") 
   ? "/" 
-  : "/nathansu-afk.github.io/"; 
+  : "/nathansu-afk.github.io/portfolio/"; 
 
 for (let p of pages) {
   let url = p.url;
