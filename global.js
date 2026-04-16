@@ -6,10 +6,10 @@ export function $$(selector, context = document) {
 
 // STEP 3: Navigation Data
 let pages = [
-  { url: '', title: 'Home' },
-  { url: 'projects/', title: 'Projects' },
-  { url: 'contact/', title: 'Contact' },
-  { url: 'resume/', title: 'Resume' },
+  { url: 'index.html', title: 'Home' },
+  { url: 'projects/index.html', title: 'Projects' },
+  { url: 'contact/index.html', title: 'Contact' },
+  { url: 'resume/index.html', title: 'Resume' },
   { url: 'https://github.com/NathanSu-afk', title: 'GitHub' },
 ];
 
