@@ -1,10 +1,13 @@
 :root {
   --color-accent: oklch(65% 50% 0);
-  --border-color: oklch(80% 3% 200%);
+  /* This border color will be light in light mode and dark in dark mode */
+  --border-color: light-dark(oklch(80% 3% 200%), oklch(30% 3% 200%));
 }
 
 html {
   accent-color: var(--color-accent);
+  /* This property is essential for the browser to recognize the theme change */
+  color-scheme: light dark;
 }
 
 body {
@@ -32,6 +35,7 @@ h1 {
   border-bottom-width: 5px;
 }
 
+/* --- Navigation Styles (Fixed for JS automation) --- */
 nav {
   display: flex;
   border: 1px solid var(--border-color);
@@ -40,9 +44,7 @@ nav {
   overflow: hidden;
 }
 
-nav ul, nav li {
-  display: contents;
-}
+/* We removed the 'nav ul' and 'nav li' rules because they caused the bullets */
 
 nav a {
   flex: 1;
@@ -58,15 +60,26 @@ nav a:last-child {
 }
 
 nav a.current {
-  background-color: oklch(from var(--color-accent) 95% 5% h);
+  /* Use a light tint for light mode, and a much darker tint for dark mode */
+  background-color: light-dark(oklch(from var(--color-accent) 95% 5% h), oklch(from var(--color-accent) 20% 5% h));
   border-bottom: 0.4em solid var(--color-accent);
+  font-weight: bold;
 }
 
 nav a:hover {
-  background-color: oklch(from var(--color-accent) 98% 2% h);
+  /* Same logic for hover states */
+  background-color: light-dark(oklch(from var(--color-accent) 98% 2% h), oklch(from var(--color-accent) 25% 2% h));
   color: var(--color-accent);
 }
 
+/* Also fix your input/article backgrounds to adapt */
+input, textarea, button, .projects article {
+  background-color: canvas;
+  color: canvastext;
+  border: 1px solid var(--border-color);
+}
+
+/* --- Forms & Inputs --- */
 form {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -80,7 +93,6 @@ input, textarea, button {
   border: 1px solid oklch(50% 0 0); 
   padding: 0.5em;
   border-radius: 4px;
-  background-color: white;
 }
 
 input:focus, textarea:focus {
@@ -105,6 +117,7 @@ button {
   padding: 0.8em;
 }
 
+/* --- Projects Grid --- */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
@@ -119,7 +132,6 @@ button {
   border: 1px solid var(--border-color);
   padding: 1.5em;
   border-radius: 12px;
-  background: oklch(99% 0 0);
 }
 
 .projects h2 {
@@ -127,8 +139,22 @@ button {
   border-bottom: none;
 }
 
+/* --- Resume Styling --- */
 section {
   border-left: 3px solid var(--border-color);
   padding-left: 1.5em;
   margin-bottom: 2.5em;
+}
+
+/* --- Theme Switcher --- */
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
+  font-family: inherit;
+}
+
+#theme-switcher {
+  font: inherit;
 }
