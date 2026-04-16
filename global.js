@@ -6,10 +6,10 @@ export function $$(selector, context = document) {
 
 // STEP 3: Navigation Data
 let pages = [
-  { url: 'index.html', title: 'Home' },
-  { url: 'projects/index.html', title: 'Projects' },
-  { url: 'contact/index.html', title: 'Contact' },
-  { url: 'resume/index.html', title: 'Resume' },
+  { url: '', title: 'Home' },
+  { url: 'projects/', title: 'Projects' },
+  { url: 'contact/', title: 'Contact' },
+  { url: 'resume/', title: 'Resume' },
   { url: 'https://github.com/NathanSu-afk', title: 'GitHub' },
 ];
 
@@ -20,7 +20,7 @@ document.body.prepend(nav);
 // STEP 3.1: Base Path Logic (Fixes links on GitHub Pages)
 const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1") 
   ? "/" 
-  : "/nathansu-afk.github.io/portfolio/"; 
+  : "https://nathansu-afk.github.io/portfolio/"; 
 
 for (let p of pages) {
   let url = p.url;
