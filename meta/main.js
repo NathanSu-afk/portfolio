@@ -37,13 +37,31 @@ function processCommits() {
 }
 
 function displayStats() {
-    // Step 1.3: Display Summary Statistics
     const root = d3.select('#stats').html('');
+
+    // 1. Calculate the extra metrics
+    const numFiles = d3.groups(data, d => d.file).length;
+    const maxDepth = d3.max(data, d => d.depth);
+    const longestLine = d3.max(data, d => d.length);
+    const maxLines = d3.max(d3.rollup(data, v => v.length, d => d.file).values());
+
+    // 2. Create a list of stats to display
+    const statsData = [
+        { label: 'COMMITS', value: commits.length },
+        { label: 'FILES', value: numFiles },
+        { label: 'TOTAL LOC', value: data.length },
+        { label: 'MAX DEPTH', value: maxDepth },
+        { label: 'LONGEST LINE', value: longestLine },
+        { label: 'MAX LINES', value: maxLines }
+    ];
+
+    // 3. Append them all into the same <dl>
     const dl = root.append('dl').attr('class', 'stats');
-    dl.append('dt').text('TOTAL LOC');
-    dl.append('dd').text(data.length);
-    dl.append('dt').text('TOTAL COMMITS');
-    dl.append('dd').text(commits.length);
+    
+    statsData.forEach(stat => {
+        dl.append('dt').text(stat.label);
+        dl.append('dd').text(stat.value);
+    });
 }
 
 function renderChart() {
