@@ -281,3 +281,100 @@ path.selected {
   outline: 2px solid black;
   outline-offset: 2px;
 }
+
+#language-breakdown, .stats {
+    display: grid;
+    /* Use 'auto' instead of '1fr' to prevent columns from stretching too wide */
+    grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+    justify-content: center; /* Centers the entire grid on the page */
+    place-items: center;    /* Centers the text inside each grid cell */
+    
+    column-gap: 3em;        /* Horizontal space between language groups */
+    row-gap: 0;             /* Eliminates vertical gap between label and number */
+
+    max-width: 900px;
+    margin-inline: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+    
+    background: var(--border-color);
+    border-radius: 6px;
+    
+    /* Font size updated to 1.25 as requested */
+    font-size: 1.25em; 
+    color: inherit;
+}
+
+.stats dt, #language-breakdown dt {
+    grid-row: 1;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+.stats dd, #language-breakdown dd {
+    grid-row: 2;
+    margin: 0;
+    padding: 0;
+    line-height: 1.1;
+    font-weight: bold;
+}
+/* Step 3.2: Tooltip Styling */
+.tooltip {
+    position: fixed;
+    background: light-dark(rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0.9));
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+    pointer-events: none; /* Step 3.3 */
+    opacity: 0;
+    transition: opacity 200ms;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Step 5.4: Brushing Highlights */
+circle.selected {
+    fill: #ff6b6b;
+    opacity: 1;
+}
+
+.gridlines line { stroke: #eee; }
+
+/* Brush box styling */
+.selection {
+    fill-opacity: 0.1;
+    stroke: var(--color-accent);
+    stroke-dasharray: 5, 5;
+}
+
+#selection-count {
+    /* Reduce this value to pull the text higher up */
+    margin-top: 0.5em; 
+    
+    /* Ensure there isn't a huge gap below it either */
+    margin-bottom: 0.5em; 
+    
+    font-weight: bold;
+}
+
+/* Spread the box out horizontally */
+#language-breakdown {
+    display: grid;
+    /* 1. Spreads items out: min width of 150px each */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    gap: 2em; /* Horizontal space between stats */
+    
+    /* 2. Wider container allows items to move further apart */
+    max-width: 800px; 
+    margin-inline: auto;
+    
+    /* 3. Vertical margins: matched to the selection-count margin */
+    margin-top: 1em; 
+    margin-bottom: 2em;
+    
+    padding: 1.5em;
+    background: var(--border-color);
+    border-radius: 8px;
+    text-align: center;
+}

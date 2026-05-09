@@ -10,6 +10,7 @@ let pages = [
   { url: 'projects/index.html', title: 'Projects' },
   { url: 'contact/index.html', title: 'Contact' },
   { url: 'Resume/', title: 'Resume' },
+  { url: 'meta/', title: 'Meta'},
   { url: 'https://github.com/NathanSu-afk', title: 'GitHub' },
 ];
 
