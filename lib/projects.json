@@ -48,10 +48,11 @@
         "description": "Voluptatibus, est. Rerum amet facilis ullam quia magnam harum distinctio fuga, perspiciatis, reiciendis quae atque non consequatur sint facere placeat quibusdam excepturi totam. Aliquam veniam placeat esse unde et tenetur?"
     },
     {
-        "title": "Illo unde in laborum?",
-        "year": "2024",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Fugit labore autem illo ratione ea maxime eos debitis inventore qui tenetur vitae ipsum exercitationem quod, aspernatur voluptatum deleniti aliquid nobis maiores praesentium tempore, est harum sequi magnam. Doloremque, perferendis."
+        "title": "Bike Watching Visualization",
+        "year": "2026",
+        "image": "bikewatching.png",
+        "description": "Visualizing BlueBike patterns in the city of Boston and Cambridge",
+        "url": "https://nathansu-afk.github.io/BikeWatching/"
     },
     {
         "title": "Vitae nam dicta aliquam.",
