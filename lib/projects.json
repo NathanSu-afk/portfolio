@@ -50,7 +50,7 @@
     {
         "title": "Bike Watching Visualization",
         "year": "2026",
-        "image": "bikewatching.png",
+        "image": "../images/bikewatching.jpg",
         "description": "Visualizing BlueBike patterns in the city of Boston and Cambridge",
         "url": "https://nathansu-afk.github.io/BikeWatching/"
     },
