@@ -12,13 +12,28 @@
 
     <div id="stats"></div>
 
-    <h2>Commits by time of day</h2>
-    <div id="chart"></div>
+    <h2>Evolution over time</h2>
+    <div id="scrolly-1">
+        <div id="scatter-story"></div>
+        
+        <div id="scatter-plot">
+            <h3>Commits by time of day</h3>
+            <div id="chart"></div>
+            
+            <p id="selection-count">No commits selected</p>
+            <dl id="language-breakdown" class="stats"></dl>
+        </div>
+    </div>
     
     <div id="tooltip" class="tooltip"></div>
 
-    <p id="selection-count">No commits selected</p>
-    <dl id="language-breakdown" class="stats"></dl>
+    <h2>Codebase evolution</h2>
+    <div id="scrolly-2">
+        <div id="file-plot">
+            <dl id="files"></dl>
+        </div>
+        <div id="file-story"></div>
+    </div>
 
     <script type="module" src="main.js"></script>
 </body>
